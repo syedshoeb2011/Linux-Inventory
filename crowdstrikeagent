@@ -1,6 +1,6 @@
 ---
 - name: Install package
-  hosts: test
+  hosts: all
   become: yes
   tasks:
   - name: install package
