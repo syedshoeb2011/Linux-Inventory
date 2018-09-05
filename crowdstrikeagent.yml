@@ -1,6 +1,6 @@
 ---
 - name: Install package
-  hosts: test
+  hosts: all
   become: yes
   tasks:
   - name: install package
@@ -9,7 +9,7 @@
       state: latest
       disable_gpg_check: yes
   - name: post install command
-    command: /opt/CrowdStrike/falconctl -s --cid=7EECAC9F71C04D1F8F7826EEA5ABA14E-54
+    command: /opt/CrowdStrike/falconctl -s --cid=7EECAC9F71C04D1F8F7826EEA5ABA14E-54 -f
     register: cmd_out
   - name: cmd_out
     debug:
