@@ -1,0 +1,10 @@
+---
+- hosts: test
+  become: yes
+  tasks:
+    - name: Test user
+      command: grep nessxsvc /etc/passwd
+      register: cmd_out
+    - name: cmd_out
+      debug:
+      msg: '{{ cmd_out }}'
